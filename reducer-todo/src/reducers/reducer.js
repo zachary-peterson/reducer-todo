@@ -16,10 +16,16 @@ export const tasksReducer = (state, action) => {
                 completed: false
         }];
     case 'MARK_COMPLETED':
-        return {
-            ...state,
-            completed: !state.completed
-    };
+        return state.map(task => {
+            console.log(task)
+            if(task === action.payload){
+                return {
+                    ...task,
+                    completed: !task.completed}
+            }
+        })
+    case 'CLEAR_COMPLETED':
+        return state.filter(task => !task.completed)
     default:
         return state;
     }

@@ -10,12 +10,16 @@ const Form = props => {
         setNewTask(e.target.value)
     };
 
-    const addTask = e => {
-        dispatch({ type: 'MARK_COMPLETED'});
-    }
-
     const handleSubmit = e => {
         dispatch({ type: 'ADD_NEW_TASK', payload: newTask});
+    };
+    
+    const toggleTask = e => {
+        dispatch({ type: 'MARK_COMPLETED', payload: e});
+    };
+
+    const clearCompleted = e => {
+        dispatch({ type: 'CLEAR_COMPLETED'})
     }
 
     return (
@@ -24,7 +28,7 @@ const Form = props => {
                 {
                     state.map(todo => {
                         return (
-                            <div key={todo.id} onClick={addTask}>
+                            <div key={todo.id} onClick={toggleTask}>
                                 <h3>{todo.task}</h3>
                             </div>
                         )
@@ -44,7 +48,7 @@ const Form = props => {
             </form>
 
             <button onClick={handleSubmit}>Submit</button>
-            <button>Clear Completed</button>
+            <button onClick={clearCompleted}>Clear Completed</button>
         </div>
     )
 }
