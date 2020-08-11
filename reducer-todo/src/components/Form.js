@@ -27,8 +27,9 @@ const Form = props => {
             <div>
                 {
                     state.map(todo => {
+                        console.log(todo);
                         return (
-                            <div key={todo.id} onClick={toggleTask}>
+                            <div key={todo.id} onClick={() => toggleTask(todo.id)}>
                                 <h3>{todo.task}</h3>
                             </div>
                         )
