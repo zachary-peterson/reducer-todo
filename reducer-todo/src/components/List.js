@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import {initialState} from '../reducers/reducer';
+import Form from './Form';
 
 const List = props => {
-    const [tasks] = useState(initialState);  
+    const [tasks] = useState(props.state);  
 
     return (
         <div>

@@ -8,16 +8,18 @@ export const initialState = [{
 export const tasksReducer = (state, action) => {
     switch (action.type) {
     case 'ADD_NEW_TASK':
-        return {
+        return [
             ...state,
-            task: action.payload,
-            id: new Date()
-        };
+            {
+                task: action.payload,
+                id: Date.now(),
+                completed: false
+        }];
     case 'MARK_COMPLETED':
         return {
             ...state,
             completed: !state.completed
-        };
+    };
     default:
         return state;
     }
