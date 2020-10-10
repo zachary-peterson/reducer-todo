@@ -33,21 +33,29 @@ const TodoContainer = styled.div`
     flex-flow: row wrap;
     margin-bottom: 0;
     overflow-y: scroll;
+    position: relative;
 
     h1 {
+        font-size: 3rem;
         color: #f5f2d0;
         width: 90%;
         margin: .5% auto;
         font-family: 'Kavoon', cursive;
         text-shadow: 5px 1px black;
+        margin-bottom: 3%;
     }
 
     .done {
-        background-color: green;
+        background-color: #57db00;
+
+        &:hover {
+            background-color: #67ff03;
+        }
     }
 
 `
 const TaskContainer = styled.div`
+    position: relative;
     background-color: #AE57FF;
     width: 30%;
     height: 10vh;
@@ -62,7 +70,7 @@ const TaskContainer = styled.div`
     align-items: center;
 
     &:hover {
-        background-color: #b76dfc;
+        background-color: #c17eff;
     }
 `
 
