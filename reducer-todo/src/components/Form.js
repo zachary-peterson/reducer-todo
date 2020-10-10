@@ -13,7 +13,9 @@ const FormContainer = styled.div`
     margin-bottom: .1%;
 
     input {
-        padding: 2%;
+        font-size: 2rem;
+        width: 50%;
+        padding: 1%;
         text-align: center;
         font-family: 'Kavoon', cursive;
     }
@@ -21,6 +23,7 @@ const FormContainer = styled.div`
 
 const TodoContainer = styled.div`
     width: 85%;
+    height: 48vh;
     padding: 4%;
     margin: 1% auto;
     color: white;
@@ -29,6 +32,7 @@ const TodoContainer = styled.div`
     display: flex;
     flex-flow: row wrap;
     margin-bottom: 0;
+    overflow-y: scroll;
 
     h1 {
         color: #f5f2d0;
@@ -38,17 +42,24 @@ const TodoContainer = styled.div`
         text-shadow: 5px 1px black;
     }
 
+    .done {
+        background-color: green;
+    }
+
 `
 const TaskContainer = styled.div`
     background-color: #AE57FF;
     width: 30%;
+    height: 10vh;
     padding: 4%;
     margin: 1% auto;
     border: 2px solid white;
     margin-bottom: 0;
-    
     text-shadow: 3px 2px black;
     font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
         background-color: #b76dfc;
@@ -99,7 +110,7 @@ const Form = props => {
                     state.map(todo => {
                         console.log(todo);
                         return (
-                            <TaskContainer key={todo.id} onClick={() => toggleTask(todo.id)}>
+                            <TaskContainer className={(todo.completed ? "done" : "")} key={todo.id} onClick={() => toggleTask(todo.id)}>
                                 <h3>{todo.task}</h3>
                             </TaskContainer>
                         )

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Form from './Form';
 
 const List = props => {
-    const [tasks] = useState(props.state);  
+    const [tasks] = useState(props.state);
 
     return (
         <div>
