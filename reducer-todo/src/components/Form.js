@@ -98,6 +98,7 @@ const Form = props => {
 
     const handleSubmit = e => {
         dispatch({ type: 'ADD_NEW_TASK', payload: newTask});
+        setNewTask('');
     };
     
     const toggleTask = e => {
