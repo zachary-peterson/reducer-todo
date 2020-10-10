@@ -81,12 +81,10 @@ const Button = styled.button`
     font-size: 1.5rem;
     padding: 1% 2%;
     margin: 1% 3%;
-    
+
     &:hover {
         background-color: darkgray;
     }
-
-
 `
 
 const Form = props => {
